@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="InnovamedProcedimentos.MainPage" Title="Procedimentos">
+<Grid Padding="18" RowDefinitions="Auto,Auto,Auto,Auto,*" RowSpacing="10" BackgroundColor="{StaticResource PageBackground}">
+<VerticalStackLayout Grid.Row="0" Spacing="6">
+<Image Source="innovamed_logo.png" HeightRequest="62" HorizontalOptions="Center" Aspect="AspectFit"/>
+<BoxView HeightRequest="1" Color="#E0E0E0"/>
+<Label Text="CONSULTA DE PROCEDIMENTOS" FontSize="20" FontAttributes="Bold" TextColor="{StaticResource Primary}" HorizontalOptions="Center"/>
+<Label x:Name="StatusLabel" Text="Carregando..." FontSize="13" TextColor="Gray" HorizontalOptions="Center"/>
+</VerticalStackLayout>
+<Picker Grid.Row="1" x:Name="TipoPicker" Title="Tipo de procedimento — Todos" SelectedIndexChanged="TipoPicker_SelectedIndexChanged"/>
+<Picker Grid.Row="2" x:Name="EquipamentoPicker" Title="Equipamento — Todos"/>
+<Grid Grid.Row="3" ColumnDefinitions="*,Auto" ColumnSpacing="8"><Entry x:Name="BuscaEntry" Placeholder="Digite parte do procedimento..." Completed="BuscaEntry_Completed"/><Button Grid.Column="1" Text="BUSCAR" BackgroundColor="{StaticResource Primary}" TextColor="White" Clicked="BuscarButton_Clicked"/></Grid>
+<CollectionView Grid.Row="4" x:Name="ResultadosCollection" SelectionMode="Single" SelectionChanged="ResultadosCollection_SelectionChanged">
+<CollectionView.EmptyView><Label Text="Nenhum procedimento encontrado." HorizontalOptions="Center" Margin="20" TextColor="Gray"/></CollectionView.EmptyView>
+<CollectionView.ItemTemplate><DataTemplate><Border Stroke="#DDDDDD" BackgroundColor="White" StrokeShape="RoundRectangle 10" Padding="12" Margin="0,0,0,8"><VerticalStackLayout Spacing="4">
+<Label Text="{Binding numero,StringFormat='Nº {0}'}" FontSize="18" FontAttributes="Bold" TextColor="{StaticResource Primary}"/>
+<Label Text="{Binding texto_original}" FontSize="15" FontAttributes="Bold"/><Label Text="{Binding TipoEquipamento}" FontSize="13" TextColor="Gray"/><Label Text="{Binding demais_informacoes}" FontSize="12" TextColor="Gray" MaxLines="2"/>
+</VerticalStackLayout></Border></DataTemplate></CollectionView.ItemTemplate>
+</CollectionView></Grid></ContentPage>

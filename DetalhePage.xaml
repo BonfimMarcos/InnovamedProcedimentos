@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="InnovamedProcedimentos.DetalhePage" Title="Procedimento">
+<ScrollView><VerticalStackLayout Padding="20" Spacing="12"><Label x:Name="Numero" FontSize="28" FontAttributes="Bold" TextColor="{StaticResource Primary}"/><Label x:Name="Descricao" FontSize="20" FontAttributes="Bold"/><BoxView HeightRequest="1" Color="#DDD"/><Label Text="Tipo" FontAttributes="Bold"/><Label x:Name="Tipo"/><Label Text="Equipamento" FontAttributes="Bold"/><Label x:Name="Equip"/><Label Text="Demais informações" FontAttributes="Bold"/><Label x:Name="Info"/><Label Text="Versão" FontAttributes="Bold"/><Label x:Name="Versao"/><Label Text="Publicação" FontAttributes="Bold"/><Label x:Name="Data"/></VerticalStackLayout></ScrollView>
+</ContentPage>
